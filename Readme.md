@@ -1,7 +1,7 @@
 # Личный проект «Нёрдс»
 
 * Студент: [Danila Abramov](https://up.htmlacademy.ru/htmlcss/25/user/1001661).
-* Наставник: `Неизвестно`.
+* Наставник: [Роман Духницький](https://htmlacademy.ru/profile/id59884).
 
 ---
 
