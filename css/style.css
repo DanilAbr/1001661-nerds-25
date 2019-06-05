@@ -1,8 +1,9 @@
 body {
   margin: 0;
   padding: 0;
+  min-width: 1200px;
 
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto", "Arial", sans-serif;
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
@@ -14,21 +15,31 @@ a {
 }
 
 .container {
-  width: 1160px;
-  padding: 0 20px;
+  width: 1200px;
   margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 
-.main-menu,
-.features-list,
-.footer-social,
-.filter-option,
-.catalog-list {
+.visually-hidden:not(:focus):not(:active) {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
   padding: 0;
-  margin: 0;
 
-  list-style: none;
+  white-space: nowrap;
+
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
+
+
+/* ------------------------- HEADER --------------------- */
+
 
 header {
   background-color: #eeeeee;
@@ -46,6 +57,7 @@ header {
 
 .main-navigation a {
   color: #000000;
+  border-bottom: 2px solid transparent;
 }
 
 .main-navigation a:hover,
@@ -75,8 +87,12 @@ header {
   display: flex;
   justify-content: space-between;
   width: 440px;
-  margin-top: 9px;
+  margin: 0;
+  margin-top: 7px;
   margin-left: 200px;
+  padding: 0;
+
+  list-style: none;
 }
 
 .cart {
@@ -84,61 +100,190 @@ header {
   margin-left: auto;
 }
 
-.page-title {
-  padding-top: 69px;
-  padding-bottom: 107px;
-  margin: 0;
 
-  font-size: 55px;
-  font-weight: 500;
-  line-height: 55px;
-  text-align: center;
+ /* --------------------- СЛАЙДЕР (slider) ---------------- */
+
+
+.slider {
+  position: relative;
+
+  margin-bottom: 80px;
 
   background-color: #eeeeee;
 }
 
-.catalog-column {
-  display: flex;
-  justify-content: space-between;
+.slider-controls {
+  position: absolute;
+  left: 50%;
+  bottom: 104px;
+  z-index: 100;
+
+  width: 160px;
+  height: 18px;
+
+  text-align: center;
+  font-size: 0;
+  transform: translateX(-50%);
 }
 
-.left-column {
-  width: 260px;
+.slider-controls i {
+  position: relative;
+
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  padding: 8px;
+
+  border-radius: 50%;
+  cursor: pointer;
 }
 
-.right-column {
-  width: 760px;
+.slider-controls i::after {
+  content: "";
+
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  z-index: 1;
+
+  width: 18px;
+  height: 18px;
+
+  background: #ffffff;
+  border-radius: 50%
 }
 
-.catalog-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+.slider-controls .active::before {
+  content: "";
+
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 2;
+
+  width: 4px;
+  height: 4px;
+  margin: -4px;
+
+  background-color: inherit;
+  border: 2px solid #c1c1c1;
+  border-radius: 50%;
 }
 
-.catalog-item {
-  margin-bottom: 33px;
-}
-
-.pagination-list {
-  display: flex;
-  padding: 0;
+.slider-list {
   margin: 0;
+  padding: 0;
 
   list-style: none;
 }
 
+.slider-item {
+  display: none;
+  padding: 68px 0 80px;
+}
+
+.slider-item:nth-child(1) {
+  display: block;
+}
+
+.slider-item:nth-child(1) {
+  background-image: url("../img/slide1.png");
+  background-repeat: no-repeat;
+  background-position: 93.5% 8px;
+}
+
+.slider-item:nth-child(2) {
+  background-image: url("../img/slide2.png");
+  background-repeat: no-repeat;
+  background-position: 100% 0;
+}
+
+.slider-item:nth-child(3) {
+  background-image: url("../img/slide3.png");
+  background-repeat: no-repeat;
+  background-position: 100% 20px;
+}
+
+.slider-item h3 {
+  max-width: 600px;
+  margin: 0;
+  margin-bottom: 27px;
+
+  font-size: 55px;
+  line-height: 55px;
+  font-weight: 500;
+}
+
+.slider-item p {
+  max-width: 430px;
+  margin: 0;
+  margin-bottom: 38px;
+}
+
+.button {
+  display: block;
+  width: 240px;
+  padding: 16px 0;
+
+  font-size: 16px;
+  line-height: 18px;
+  color: #ffffff;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  background-color: #fb565a;
+  border-radius: 3px;
+  border: none;
+}
+
+.button:hover,
+.button:focus {
+  background-color: #e74246;
+}
+
+.button:active {
+  color: rgba(255, 255, 255, 0.3);
+
+  background-color: #d7373b;
+  box-shadow: 0 3px rgba(0, 0, 0, 0.1) inset;
+}
+
+
+/* ----------------- БЛОК С НАПРАВЛЕНИЯМИ (features)------------------- */
+
+
 .features-list {
   display: flex;
-  margin-right: 60px;
   justify-content: space-between;
+  margin: 0;
+  padding: 0;
+  padding-bottom: 80px;
+
+  list-style: none;
+
+  border-bottom: 2px solid #eeeeee;
 }
 
 .features-item {
+  display: flex;
+  flex-direction: column;
   width: 300px;
 }
 
+.features-item:last-child {
+  margin-right: 60px;
+}
+
+.features-item img {
+
+  order: 0;
+}
+
 .features-item h3 {
+  margin: 0;
+  margin: 25px 0 16px;
+  order: 1;
   font-size: 24px;
   font-weight: 700;
   line-height: 30px;
@@ -146,17 +291,24 @@ header {
 }
 
 .features-item p {
-  margin-bottom: 45px;
+  max-width: 280px;
+  margin: 0;
+  order: 1;
+  margin-bottom: 32px;
 }
 
-button,
-.features-item .button {
-  padding: 16px 40px;
+.features-item a {
+  order: 1;
+}
 
-  color: #ffffff;
+.features-item .button {
+  width: 142px;
+  padding: 16px 9px;
+
   font-size: 16px;
-  line-height: 18px;
   font-weight: 500;
+  line-height: 18px;
+  color: #ffffff;
   text-align: center;
   text-transform: uppercase;
 
@@ -211,6 +363,340 @@ button,
   background-color: #e5a722;
 }
 
+
+/* ------------------------ ОПИСАНИЕ (description) ------------------------ */
+
+
+.overview {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 49px;
+}
+
+.description {
+  width: 660px;
+  padding-top: 75px;
+}
+
+.description p {
+  margin: 0;
+  padding-bottom: 40px;
+}
+
+.description ul {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.description li {
+  padding-left: 36px;
+  padding-bottom: 24px;
+}
+
+.description .description-slogan {
+  display: block;
+  padding-bottom: 32px;
+  font-size: 45px;
+  font-weight: 500;
+  line-height: 45px;
+}
+
+.description .description-activites {
+  display: block;
+  padding-bottom: 23px;
+  text-transform: uppercase;
+}
+
+/* ------------------------------- СТАТИСТИКА -------------------------------- */
+
+
+.statistics {
+  width: 360px;
+
+  background-image: url("../img/nerds-illustration.jpg");
+  background-repeat: no-repeat;
+  background-position: 0 40px;
+}
+
+.statistics-slogan {
+  display: block;
+  padding-top: 285px;
+  padding-bottom: 45px;
+
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.statistics-table-percent {
+  font-size: 45px;
+  font-weight: 700;
+  line-height: 10px;
+
+}
+
+.statistics-table-percent td {
+
+
+}
+
+.statistics-table-percent sup {
+  font-size: 27px;
+}
+
+
+/* ------------------------------ ПРИМЕРЫ РАБОТ --------------------------- */
+
+
+.example-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  padding-left: 31px;
+  padding-right: 43px;
+  padding-top: 50px;
+  padding-bottom: 37px;
+
+  list-style: none;
+  border-top: 2px solid #eeeeee;
+  border-bottom: 2px solid #eeeeee;
+}
+
+.example-item:not(:first-child)::before {
+  content: "";
+
+  position: absolute;
+
+  width: 2px;
+  height: 55px;
+
+
+  background-color: #eeeeee;
+}
+
+
+/* ---------------------- КОНТАКТЫ (contacts) ----------------------------- */
+
+
+.address {
+  position: relative;
+  margin: 0 auto;
+  margin-top: 80px;
+  width: 1440px;
+  height: 416px;
+  background-image: url("../img/map.jpg");
+  background-repeat: no-repeat;
+  background-position: 0 -152px;
+}
+
+.contacts {
+  position: absolute;
+  top: 54px;
+  left: 140px;
+
+  padding: 50px;
+  background-color: #ffffff;
+}
+
+.contacts h3 {
+  margin: 0;
+  margin-bottom: 22px;
+  font-size: 18px;
+  font-weight: 700px;
+  line-height: 30px;
+}
+
+.contacts p {
+  line-height: 18px;
+  color: #666666;
+}
+
+.contacts-btn {
+  width: 220px;
+  margin-top: 37px;
+}
+
+
+/* --------------------- СТРАНИЦА КАТАЛОГА (catalog.html) ------------------ */
+
+
+.page-title {
+  padding-top: 69px;
+  padding-bottom: 107px;
+  margin: 0;
+
+  font-size: 55px;
+  font-weight: 500;
+  line-height: 55px;
+  text-align: center;
+
+  background-color: #eeeeee;
+}
+
+.catalog-columns {
+  display: flex;
+  justify-content: space-between;
+}
+
+.left-column {
+  width: 260px;
+}
+
+.right-column {
+  width: 760px;
+}
+
+.catalog-list {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  list-style: none;
+}
+
+.catalog-item {
+  margin: 0;
+  margin-bottom: 33px;
+  padding: 0;
+
+
+}
+
+.pagination-list {
+  display: flex;
+  padding: 0;
+  margin: 0;
+
+  list-style: none;
+}
+
+.sort {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sort-list {
+  display: flex;
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+
+/* ----------------------- ФИЛЬТР ПО СТОИМОСТИ -------------------------- */
+
+
+.filter-item {
+  margin: 0;
+  padding: 0;
+
+  border: none;
+}
+
+.range-filter {
+  width: 260px;
+  margin-top: 49px;
+}
+
+.filter-item legend {
+  font-size: 18px;
+  line-height: 24px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.range-controls {
+  position: relative;
+
+  height: 41px;
+  margin-bottom: 15px;
+  padding-top: 39px;
+  padding-right: 20px;
+  padding-left: 20px;
+
+  background-color: #f1f1f1;
+
+  border-radius: 5px;
+}
+
+.range-controls .scale {
+  height: 2px;
+
+  background: #d7dcde;
+}
+
+.range-controls .bar {
+  width: 70%;
+  height: 2px;
+
+  background-color: #00ca74;
+}
+
+.range-controls .toggle {
+  position: absolute;
+  top: 31px;
+  left: 0;
+
+  width: 4px;
+  height: 4px;
+  padding: 0;
+
+  border: 8px solid #ffffff;
+  background-color: #ababab;
+  box-shadow: 0 2px 1px 0 #cfcfcf;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.range-controls .toggle-min {
+  left: 18px;
+}
+
+.range-controls .toggle-max {
+  left: 160px;
+}
+
+.price-controls {
+  font-size: 0;
+}
+
+.price-controls label {
+  display: inline-block;
+  width: 50%;
+
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+.price-controls input {
+  width: 60px;
+  margin-left: 10px;
+  padding: 8px 10px;
+
+  font-family: "Roboto", "Arial", sans-serif;
+  font-size: 16px;
+  text-align: center;
+  color: #283136;
+
+  border: none;
+  border-radius: 5px;
+  background: #f1f1f1;
+}
+
+.max-price {
+  text-align: right;
+}
+
+
+/* ----------------- ФИЛЬТРЫ ПО ТИПУ СЕТКИ И ОСОБЕННОСТЯМ ------------- */
+
+
 .filter-option label {
   color: #283136;
   line-height: 20px;
@@ -235,6 +721,22 @@ button,
   border-top: 2px solid #bfbfbf;
   background-color: #d5d5d5;
 }
+
+
+/* -------------------------- ФОРМА ОБРАТНОЙ СВЯЗИ (modal) ----------------- */
+
+
+.modal {
+  width: 960px;
+  height: 590px;
+  margin: 0 auto;
+
+  background-color: #ffffff;
+}
+
+
+/* -------------------------------- FOOTER --------------------------------- */
+
 
 .main-footer {
   display: flex;

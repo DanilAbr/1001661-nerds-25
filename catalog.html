@@ -25,28 +25,42 @@
     <main>
       <h1 class="page-title">Магазин готовых шаблонов</h1>
 
-      <div class="catalog-column container">
+      <div class="catalog-columns container">
         <section class="left-column filters">
           <h2 class="visually-hidden">Фильтр</h2>
 
           <form class="filter" action="https://echo.htmlacademy.ru" method="get">
-
-            <!-- Здесь будет фильтр по стоимости -->
+            <fieldset class="filter-item">
+              <legend>Стоимость:</legend>
+              <div class="range-filter">
+                <div class="range-controls">
+                  <div class="scale">
+                    <div class="bar"></div>
+                  </div>
+                  <div class="toggle toggle-min"></div>
+                  <div class="toggle toggle-max"></div>
+                </div>
+                <div class="price-controls">
+                  <label class="min-price">от <input name="min-price" type="text" value="0"></label>
+                  <label class="max-price">от <input name="max-price" type="text" value="15000"></label>
+                </div>
+              </div>
+            </fieldset>
 
             <fieldset>
               <legend>Сетка:</legend>
               <ul>
                 <li class="filter-option">
-                  <input class="visually-hidden filter-input filter-input-radio" type="radio" name="grid-group" value="adaptive" id="filter-adaptive" checked>
+                  <input class="visually-hidden filter-inputfilter-input-radio" type="radio" name="grid-group" value="adaptive" id="filter-adaptive" checked>
                   <label for="filter-adaptive">Адаптивная</label>
                 </li>
                 <li class="filter-option">
-                  <input class="visually-hidden filter-input filter-input-radio" type="radio" name="grid-group"
+                  <input class="visually-hidden filter-inputfilter-input-radio" type="radio" name="grid-group"
                     value="fix" id="filter-fix">
                   <label for="filter-fix">Фиксированная</label>
                 </li>
                 <li class="filter-option">
-                  <input class="visually-hidden filter-input filter-input-radio" type="radio" name="grid-group"
+                  <input class="visually-hidden filter-inputfilter-input-radio" type="radio" name="grid-group"
                     value="flexible" id="filter-flexible">
                   <label for="filter-flexible">Резиновая</label>
                 </li>
@@ -116,19 +130,20 @@
           </section>
         </div>
       </div>
-      <!--
-      <section class="contacts">
-        <h2 class="visually-hidden">Контакты</h2>
-        <h3 class="contacts-title">NЁRDS DESIGN STUDIO</h3>
-        <p class="contacts-field">
-          191186, Санкт-Петербург,<br>
-          ул. Б. Конюшенная, д. 19/8<br>
-          <br>
-          тел. +7 (812) 275-75-75
-        </p>
-        <a class="contacts-btn" href="#">Напишите нам</a>
+
+      <section class="address">
+        <div class="contacts">
+          <h2 class="visually-hidden">Контакты</h2>
+          <h3>NЁRDS DESIGN STUDIO</h3>
+          <p>
+            191186, Санкт-Петербург,<br>
+            ул. Б. Конюшенная, д. 19/8<br>
+            <br>
+            тел. +7 (812) 275-75-75
+          </p>
+          <a class="contacts-btn button" href="#">Напишите нам</a>
+        </div>
       </section>
-      -->
     </main>
 
     <footer class="main-footer container">
@@ -143,7 +158,6 @@
       </div>
     </footer>
 
-    <!--
     <section class="modal modal-message">
       <h2 class="visually-hidden">Форма обратной связи</h2>
       <form class="message" action="https://echo.htmlacademy.ru" method="get">
@@ -160,6 +174,5 @@
       </form>
       <button class="modal-close">x</button>
     </section>
-    -->
   </body>
 </html>
