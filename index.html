@@ -75,7 +75,6 @@
             <p>Вы даже не подозреваете, насколько вы изумительны!</p>
             <a href="#" class="button button-yellow">Заказать</a>
           </li>
-
         </ul>
       </section>
 
@@ -110,25 +109,25 @@
         </section>
       </div>
 
-      <section class="example container">
+      <section class="partners container">
         <h2 class="visually-hidden">Примеры работ</h2>
-        <ul class="example-list">
-          <li class="example-item">
-            <a href="https://htmlacademy.ru">
+        <ul class="partners-list">
+          <li class="partners-item">
+            <a href="https://htmlacademy.ru/intensive/htmlcss">
               <img src="img/logo-1.png" width="260" height="180" alt="Сайт HTML Academy">
             </a>
           </li>
-          <li class="example-item">
+          <li class="partners-item">
             <a href="#">
               <img src="img/logo-2.png" width="260" height="180" alt="Сайт Барбершоп Бородинский">
             </a>
           </li>
-          <li class="example-item">
+          <li class="partners-item">
             <a href="#">
               <img src="img/logo-3.png" width="260" height="180" alt="Сайт Pink">
             </a>
           </li>
-          <li class="example-item">
+          <li class="partners-item">
             <a href="#">
               <img src="img/logo-4.png" width="260" height="180" alt="Сайт Mishka">
             </a>
@@ -159,19 +158,19 @@
         <li>
           <a class="social-button" href="#">
             <span class="visually-hidden">Вконтакте</span>
-            <img src="/img/vk-icon.svg" alt="vkontakte">
+            <img src="img/vk-icon.svg" alt="vkontakte">
           </a>
         </li>
         <li>
           <a class="social-button" href="#">
             <span class="visually-hidden">Фейсбук</span>
-            <img src="/img/fb-icon.svg" alt="facebook">
+            <img src="img/fb-icon.svg" alt="facebook">
           </a>
         </li>
         <li>
           <a class="social-button" href="#">
             <span class="visually-hidden">Инстаграмм</span>
-            <img src="/img/insta-icon.svg" alt="instagram">
+            <img src="img/insta-icon.svg" alt="instagram">
           </a>
         </li>
       </ul>
@@ -184,24 +183,26 @@
     <section class="modal modal-message">
       <h2 class="visually-hidden">Форма обратной связи</h2>
       <h3>Напишите нам</h3>
-      <form class="message" action="https://echo.htmlacademy.ru" method="get">
+      <form class="message-form" action="https://echo.htmlacademy.ru" method="get">
         <div class="name">
           <p>
             <label for="message-name">Ваше имя:</label>
-            <input class="area" type="text" id="message-name" placeholder="Имя Фамилия">
+            <input class="area" type="text" name="person-name" id="message-name" placeholder="Имя Фамилия">
           </p>
           <p>
             <label for="message-email">Ваш e-mail:</label>
-            <input class="area" type="email" id="message-email" placeholder="email@example.com">
+            <input class="area" type="email" name="email" id="message-email" placeholder="email@example.com">
           </p>
         </div>
         <p class="message-text">
           <label for="message-text">Текст письма:</label>
-          <textarea class="area text" id="message-text" placeholder="В свободной форме"></textarea>
+          <textarea class="area text" name="text" id="message-text" placeholder="В свободной форме"></textarea>
         </p>
         <button type="submit" class="button message-btn">Отправить</button>
       </form>
       <button class="modal-close">Закрыть</button>
     </section>
+
+    <script src="js/script.js"></script>
   </body>
 </html>
