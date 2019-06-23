@@ -32,6 +32,9 @@ close.addEventListener("click", function (evt) {
   evt.preventDefault();
   popup.classList.remove("modal-show");
   popup.classList.remove("modal-error");
+  personName.classList.remove("input-background");
+  email.classList.remove("input-background");
+  text.classList.remove("input-background");
 });
 
 form.addEventListener("submit", function (evt) {
@@ -40,6 +43,15 @@ form.addEventListener("submit", function (evt) {
     popup.classList.remove("modal-error");
     popup.offsetWidth = popup.offsetWidth;
     popup.classList.add("modal-error");
+    if (!personName.value) {
+      personName.classList.add("input-background");
+    }
+    if (!email.value) {
+      email.classList.add("input-background");
+    }
+    if (!text.value) {
+      text.classList.add("input-background");
+    }
   } else {
     if (isStorageSupport) {
       localStorage.setItem("personName", personName.value);
@@ -53,6 +65,9 @@ window.addEventListener("keydown", function (evt) {
     if (popup.classList.contains("modal-show")) {
       popup.classList.remove("modal-show");
       popup.classList.remove("modal-error");
+      personName.classList.remove("input-background");
+      email.classList.remove("input-background");
+      text.classList.remove("input-background");
     }
   }
 });
